@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            background-color: #6C5F8D;
+            color: #DCD7D5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #9C8CB9;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .payment-method {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #F07167;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .payment-method:hover {
+            background-color: #BA96C1;
+        }
+
+        .btn {
+            background-color: #4B3F6E;
+            color: #DCD7D5;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #BA96C1;
+        }
+
+        .payment-box {
+            background-color: #4B3F6E;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Payment</h1>
+        <p><strong>Movie:</strong> <span id="movieName"></span></p>
+        <p><strong>Total Seats:</strong> <span id="totalSeats"></span></p>
+        <p><strong>Total Price:</strong> RS.<span id="totalPrice"></span></p>
+
+        <div class="payment-box">
+            <h2>Select Payment Method</h2>
+            <button class="payment-method">UPI</button>
+            <button class="payment-method">Debit Card</button>
+            <button class="payment-method">Net Banking</button>
+            <button class="payment-method">Credit Card</button>
+        </div>
+        <button class="btn">Pay Now</button>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const movie = params.get('movie');
+        const seats = params.get('seats');
+        const price = params.get('price');
+
+        document.getElementById('movieName').innerText = movie;
+        document.getElementById('totalSeats').innerText = seats;
+        document.getElementById('totalPrice').innerText = seats * price;
+    </script>
+</body>
+</html>
+
+
+
+
+
+

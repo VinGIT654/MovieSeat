@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Selection</title>
+    <style>
+        body {
+            background-color: #6C5F8D;
+            color: #DCD7D5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .movie-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        .movie {
+            background-color: #9C8CB9;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .movie:hover {
+            transform: scale(1.05);
+        }
+
+        .movie img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .movie button {
+            background-color: #4B3F6E;
+            color: #DCD7D5;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .movie button:hover {
+            background-color: #BA96C1;
+        }
+    </style>
+    
+
+</head>
+<body>
+    <h1>Select a Movie</h1>
+    <div class="movie-container">
+        <div class="movie">
+            <img src="https://th.bing.com/th/id/OIP.wnPfzG6TjduMInCiLc7g5wHaFj?rs=1&pid=ImgDetMain" alt="Sanam Teri Kasam">
+            <h2>Sanam Teri Kasam</h2>
+            <p>Romance 2016 U/A 13+<br>Sanam Teri Kasam is a 2016 Indian romantic film starring Harshvardhan Rane and Pakistani actress Mawra Hocane. It is directed by the duo Radhika Rao-Vinay Sapru and produced by Deepak Mukut. The film is a modern rendition of the novel Love Story by Eric Segal.</p>
+            <p><strong>Genre:</strong> Romance</p>
+            <p><strong>Timing:</strong> 2:00 PM, 5:00 PM, 8:00 PM</p>
+            <button onclick="selectMovie('Sanam Teri Kasam', 220)">Select</button>
+        </div>
+        <div class="movie">
+            <img src="https://images.ottplay.com/images/avesham-poster-1702648093.jpg?impolicy=ottplay-20210210&width=600" alt="Aavesham">
+            <h2>Aavesham</h2>
+            <p>Action, Comedy<br>Three teenagers reach Bangalore for their engineering degree and get involved in a fight with seniors. They find a local gangster named Ranga to help them take revenge.</p>
+            <p><strong>Genre:</strong> Action, Comedy</p>
+            <p><strong>Timing:</strong> 1:00 PM, 4:00 PM, 7:00 PM</p>
+            <button onclick="selectMovie('Aavesham', 320)">Select</button>
+        </div>
+        <div class="movie">
+            <img src="https://th.bing.com/th/id/OIP.PrUCXgguJTQaRUuN0Fz8eAAAAA?rs=1&pid=ImgDetMain" alt="Pushpa 2">
+            <h2>Pushpa 2</h2>
+            <p>Action, Crime, Drama<br>The clash is on as Pushpa and Bhanwar Singh continue their rivalry in this epic conclusion to the two-parted action drama.</p>
+            <p><strong>Genre:</strong> Action, Crime, Drama</p>
+            <p><strong>Timing:</strong> 3:00 PM, 6:00 PM, 9:00 PM</p>
+            <button onclick="selectMovie('Pushpa 2', 250)">Select</button>
+        </div>
+        <div class="movie">
+            <img src="https://th.bing.com/th/id/OIP.ayTCV2C9SsZHViIY1uvIqQHaD4?rs=1&pid=ImgDetMain" alt="Tumbbad">
+            <h2>Tumbbad</h2>
+            <p>A mythological story about a goddess who created the entire universe. The plot revolves around the consequences when humans build a temple for her first-born.</p>
+            <p><strong>Genre:</strong> Mythological</p>
+            <p><strong>Timing:</strong> 12:00 PM, 3:00 PM, 6:00 PM</p>
+            <button onclick="selectMovie('Tumbbad', 260)">Select</button>
+        </div>
+    </div>
+
+    <script>
+        function selectMovie(movie, price) {
+            window.location.href = `seat-selection.html?movie=${encodeURIComponent(movie)}&price=${price}`;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+

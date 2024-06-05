@@ -26,7 +26,7 @@ This project is a simple movie ticket booking system that allows users to select
 
 ## Author
 
-[Your Name]
+[VinGIT654]
 
 ## License
 

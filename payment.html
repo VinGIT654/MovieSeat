@@ -64,7 +64,6 @@
             margin-top: 20px;
         }
     </style>
-    
 </head>
 <body>
     <div class="container">
@@ -75,12 +74,12 @@
 
         <div class="payment-box">
             <h2>Select Payment Method</h2>
-            <button class="payment-method">UPI</button>
-            <button class="payment-method">Debit Card</button>
-            <button class="payment-method">Net Banking</button>
-            <button class="payment-method">Credit Card</button>
+            <button class="payment-method" onclick="selectPaymentMethod('UPI')">UPI</button>
+            <button class="payment-method" onclick="selectPaymentMethod('Debit Card')">Debit Card</button>
+            <button class="payment-method" onclick="selectPaymentMethod('Net Banking')">Net Banking</button>
+            <button class="payment-method" onclick="selectPaymentMethod('Credit Card')">Credit Card</button>
         </div>
-        <button class="btn">Pay Now</button>
+        <button class="btn" onclick="payNow()">Pay Now</button>
     </div>
 
     <script>
@@ -92,6 +91,21 @@
         document.getElementById('movieName').innerText = movie;
         document.getElementById('totalSeats').innerText = seats;
         document.getElementById('totalPrice').innerText = seats * price;
+
+        let selectedPaymentMethod = '';
+
+        function selectPaymentMethod(method) {
+            selectedPaymentMethod = method;
+            alert(`Selected Payment Method: ${method}`);
+        }
+
+        function payNow() {
+            if (!selectedPaymentMethod) {
+                alert('Please select a payment method.');
+                return;
+            }
+            alert(`Payment of Rs.${seats * price} for ${movie} using ${selectedPaymentMethod} successful!`);
+        }
     </script>
 </body>
 </html>
